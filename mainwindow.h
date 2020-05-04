@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -18,9 +18,23 @@ public:
 private slots:
     void on_comboBox_currentIndexChanged(int index);
 
+    void on_tableWidget_cellChanged(int row, int column);
+
 private:
     Ui::MainWindow *ui;
 
     void fillVariables(int rows, int column, int multiplier, int variables);
+
+    void getResult(int variables, int rows, int columns);
+
+    QString SDNF_SKNF(QString SDNF);
+
+    QString isLinear();
+
+    void formOutput();
+
+    QString selfDuality();
+
+    QString Zhehalkin();
 };
 #endif // MAINWINDOW_H
